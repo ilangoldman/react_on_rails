@@ -1,0 +1,13 @@
+{
+  "name": "website",
+  "license": "MIT",
+  "engines": {
+    "node": "10.15.3",
+    "yarn": "1.15.2"
+  },
+  "scripts": {
+    "build": "npm --prefix client install && npm run --prefix client build",
+    "deploy": "cp -a client/build/. public/",
+    "heroku-postbuild": "npm run build && npm run deploy"
+  }
+}
